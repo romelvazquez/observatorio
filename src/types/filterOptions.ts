@@ -1,16 +1,27 @@
+import {
+  RegistroCreator,
+  RegistroSubject,
+  RegistroPublisher,
+  RegistroLanguage,
+  RegistroRights,
+  PatenteFuente,
+  PatenteOffice,
+  PatenteClaims,
+  PatenteDescription,
+} from '@/types/enums';
+
 export const filterOptions = {
-    REGISTROS: {
-      creators: ["Autor 1", "Autor 2", "Autor 3"], // Sustituye con valores reales
-      subject: ["Materia 1", "Materia 2", "Materia 3"],
-      publisher: ["Editorial 1", "Editorial 2", "Editorial 3"],
-      language: ["Español", "Inglés", "Francés"],
-      rights: ["Derecho 1", "Derecho 2", "Derecho 3"],
-    },
-    PATENTES: {
-      fuente: ["Google", "YouTube", "Nature"], // Filtros basados en la relación con `ApiFuente`
-      patent_office: ["Japón", "China", "USPTO"],
-      claims: ["Claim 1", "Claim 2", "Claim 3"], // Opciones ficticias, sustituir con reales si es necesario
-      description: ["Descripción breve", "Descripción técnica", "Descripción completa"], // Opciones de ejemplo
-    },
-  };
-  
+  REGISTROS: {
+    creators: Object.values(RegistroCreator),
+    subject: Object.values(RegistroSubject),
+    publisher: Object.values(RegistroPublisher),
+    language: Object.values(RegistroLanguage),
+    rights: Object.values(RegistroRights),
+  },
+  PATENTES: {
+    fuente: Object.values(PatenteFuente),
+    patent_office: Object.values(PatenteOffice),
+    claims: Object.values(PatenteClaims),
+    description: Object.values(PatenteDescription),
+  },
+} as const;

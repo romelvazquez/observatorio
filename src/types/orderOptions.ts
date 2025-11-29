@@ -1,29 +1,13 @@
-export const orderOptions = {
-    REGISTROS: {
-      title: "Título",
-      creator: "Autor",
-      date: "Fecha",
-      publisher: "Editorial",
-      subject: "Materia",
-      description: "Descripción",
-    },
-    PATENTES: {
-      fuente_id: "Fuente",
-      url: "URL",
-      abstract: "Resumen",
-      patent_office: "Patent Office",
-      claims: "Claims",
-      description: "Descripción"
-    },
-    EJES: {
-      nombre_eje: 'Nombre',
-      esta_activo:"Estado",
+import {
+  RegistroOrder,
+  PatenteOrder,
+  EjeOrder,
+  BoletinOrder,
+} from '@/types/enums';
 
-    },
-    BOLETINES: {
-      theme: "Tema",
-      published_by: "Redactor",
-      publication_date: "Fecha"
-    }
-  };
-  
+export const orderOptions = {
+  REGISTROS: Object.values(RegistroOrder),
+  PATENTES: Object.values(PatenteOrder),
+  EJES: Object.values(EjeOrder),
+  BOLETINES: Object.values(BoletinOrder),
+} as const;

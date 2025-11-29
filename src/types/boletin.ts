@@ -1,3 +1,5 @@
+import type { PaginatedResponse } from "./api";
+
 export type Boletin = {
     id: number;
     title: string;
@@ -20,8 +22,4 @@ export type Boletin = {
     publication_date: string; // Fecha en formato ISO
   };
 
- export type GetBoletinesResponse = {
-    boletines: Boletin[]; // Array de boletines
-    total_pages: number; // Número total de páginas
-    total_boletines: number; // Número total de boletines
-  };
+ export type GetBoletinesResponse = PaginatedResponse<Boletin>
